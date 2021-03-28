@@ -5,10 +5,22 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const dotenv = require('dotenv');
+const helmet = require('helmet');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(helmet());
+dotenv.config();
+mongoose.connect(
+  process.env.CONNECTION,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  () => console.log('db connected: this is the way')
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
