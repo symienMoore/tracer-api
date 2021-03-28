@@ -1,14 +1,16 @@
-const joi = require('@hapi/joi');
+//TODO: need to update this file, hapi/joi went through updates and need to sort through it
+
+// const joi = require('@hapi/joi');
 
 
-doRegisterCheck = (data) => {
-    if (data.password.length < 6) {
-        return 'sorry, password must be at least 6 characters';
-   }
-};
+// exports.doRegisterCheck = (data, req, res) => {
+//     if (data.password.length < 6) {
+//         return res.send('sorry, your password must be at least 6 characters');
+//    }
+// };
 
 
-module.exports.doRegisterCheck = doRegisterCheck;
+// module.exports.doRegisterCheck = doRegisterCheck;
 
 // const authSchema = joi.object({
 //     name: joi.string().required(),
